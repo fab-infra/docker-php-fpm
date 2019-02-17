@@ -1,10 +1,8 @@
-# PHP-FPM server based on openSUSE 42
-FROM fcrespel/base-image:opensuse42
+# PHP-FPM server based on openSUSE 15
+FROM fcrespel/base-image:opensuse15
 
 # PHP with modules
-RUN zypper ar -f http://download.opensuse.org/repositories/server:/php:/extensions:/php7/openSUSE_Leap_42.3/server:php:extensions:php7.repo &&\
-	zypper --gpg-auto-import-keys ref &&\
-	zypper in -y php7 php7-devel \
+RUN zypper in -y php7 php7-devel \
 	php7-bz2 \
 	php7-ctype \
 	php7-curl \
