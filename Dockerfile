@@ -44,12 +44,8 @@ RUN zypper ar -f http://download.opensuse.org/repositories/server:/php:/extensio
 	php-composer &&\
 	zypper clean -a
 
-# Browscap and GeoIP databases
-RUN wget -nv https://browscap.org/stream?q=Lite_PHP_BrowsCapINI -O /usr/share/php7/browscap.ini &&\
-	wget -nv http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O /var/lib/GeoIP/GeoIPCity.dat.gz &&\
-	gunzip /var/lib/GeoIP/GeoIPCity.dat.gz &&\
-	wget -nv http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz -O /var/lib/GeoIP/GeoIPCityv6.dat.gz &&\
-	gunzip /var/lib/GeoIP/GeoIPCityv6.dat.gz
+# Browscap database
+RUN wget -nv https://browscap.org/stream?q=Lite_PHP_BrowsCapINI -O /usr/share/php7/browscap.ini
 
 # Files
 COPY ./root /
