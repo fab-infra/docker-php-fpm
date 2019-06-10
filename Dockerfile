@@ -42,6 +42,12 @@ RUN zypper in -y php7 php7-devel \
 	php-composer &&\
 	zypper clean -a
 
+# FFmpeg for video processing support (from Packman Essentials)
+RUN zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.1/Essentials packman-essentials &&\
+	zypper --gpg-auto-import-keys ref &&\
+	zypper in -y ffmpeg &&\
+	zypper clean -a
+
 # Browscap database
 RUN wget -nv https://browscap.org/stream?q=Lite_PHP_BrowsCapINI -O /usr/share/php7/browscap.ini
 
