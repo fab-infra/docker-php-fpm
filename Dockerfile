@@ -41,7 +41,8 @@ RUN zypper ar -f http://download.opensuse.org/repositories/server:/php:/extensio
 	php7-zip \
 	php7-zlib \
 	php7-APCu \
-	php-composer &&\
+	php-composer \
+	FastCGI &&\
 	zypper clean -a
 
 # Browscap database
