@@ -39,7 +39,8 @@ RUN zypper in -y php7 php7-devel \
 	php7-zip \
 	php7-zlib \
 	php7-APCu \
-	php-composer &&\
+	php-composer \
+	FastCGI &&\
 	zypper clean -a
 
 # FFmpeg for video processing support (from Packman Essentials)
