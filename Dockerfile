@@ -3,6 +3,7 @@ FROM fcrespel/base-image:opensuse15
 
 # PHP with modules
 RUN zypper in -y php7 php7-devel \
+	php7-bcmath \
 	php7-bz2 \
 	php7-ctype \
 	php7-curl \
@@ -14,6 +15,7 @@ RUN zypper in -y php7 php7-devel \
 	php7-gd \
 	php7-geoip \
 	php7-gettext \
+	php7-gmp \
 	php7-iconv \
 	php7-imagick \
 	php7-intl \
