@@ -1,5 +1,5 @@
 # PHP-FPM server based on openSUSE 15.2
-FROM fcrespel/base-image:opensuse15.2
+FROM ghcr.io/fab-infra/base-image:opensuse15.2
 
 # PHP with modules
 RUN zypper in -y php7 php7-devel \
