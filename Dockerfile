@@ -40,10 +40,16 @@ RUN zypper in -y php7 php7-devel \
 	php7-zip \
 	php7-zlib \
 	php7-APCu \
-	php-composer \
 	FastCGI \
 	git &&\
 	zypper clean -a
+
+# Composer
+RUN zypper ar -cfp 90 https://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_15.2/ server:php:applications &&\
+	zypper --gpg-auto-import-keys ref &&\
+	zypper in -y php-composer2 &&\
+	zypper clean -a &&\
+	ln -s composer2 /usr/bin/composer
 
 # FFmpeg for video processing support (from Packman Essentials)
 RUN zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Essentials packman-essentials &&\
