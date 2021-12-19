@@ -1,5 +1,5 @@
-# PHP-FPM server based on openSUSE 15.2
-FROM ghcr.io/fab-infra/base-image:opensuse15.2
+# PHP-FPM server based on openSUSE 15.3
+FROM ghcr.io/fab-infra/base-image:opensuse15.3
 
 # PHP with modules
 RUN zypper in -y php7 php7-devel \
@@ -45,14 +45,13 @@ RUN zypper in -y php7 php7-devel \
 	zypper clean -a
 
 # Composer
-RUN zypper ar -cfp 90 https://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_15.2/ server:php:applications &&\
+RUN zypper ar -cfp 90 https://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_15.3/ server:php:applications &&\
 	zypper --gpg-auto-import-keys ref &&\
 	zypper in -y php-composer2 &&\
-	zypper clean -a &&\
-	ln -s composer2 /usr/bin/composer
+	zypper clean -a
 
 # FFmpeg for video processing support (from Packman Essentials)
-RUN zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Essentials packman-essentials &&\
+RUN zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.3/Essentials packman-essentials &&\
 	zypper --gpg-auto-import-keys ref &&\
 	zypper in -y ffmpeg &&\
 	zypper clean -a
