@@ -61,8 +61,7 @@ RUN wget -nv https://browscap.org/stream?q=Lite_PHP_BrowsCapINI -O /usr/share/ph
 
 # Files
 COPY ./root /
-RUN chmod +x /run.sh &&\
-	chmod a+rw /etc/passwd /etc/group &&\
+RUN chmod a+rw /etc/passwd /etc/group &&\
 	mkdir -p /var/run/php-fpm /var/log/php-fpm &&\
 	chmod -R a+rwX /var/lib/php7 /var/run/php-fpm /var/log/php-fpm
 
