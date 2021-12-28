@@ -2,7 +2,7 @@
 FROM ghcr.io/fab-infra/php-cli:7.4-opensuse15
 
 # PHP FPM
-RUN zypper in -y php7-fpm &&\
+RUN zypper in -y php7-fpm FastCGI &&\
 	zypper clean -a
 
 # Files
