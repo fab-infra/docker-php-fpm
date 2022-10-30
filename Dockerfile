@@ -1,4 +1,4 @@
-# PHP based on openSUSE 15.3
+# PHP based on openSUSE 15.4
 FROM ghcr.io/fab-infra/php-cli:7.4-opensuse15
 
 # PHP FPM
