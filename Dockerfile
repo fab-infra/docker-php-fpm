@@ -1,5 +1,5 @@
-# PHP based on openSUSE 15.6
-FROM ghcr.io/fab-infra/php-cli:8.2-opensuse15
+# PHP based on openSUSE 16.0
+FROM ghcr.io/fab-infra/php-cli:8.4-opensuse16
 
 # PHP FPM
 RUN zypper in -y php8-fpm FastCGI &&\
